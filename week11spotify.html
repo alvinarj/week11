@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Spotify Clone</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    .navbar {
+            width: 100%;
+            background-color: #1DB954;
+            padding: 10px;
+        }
+       
+        .navbar .spotify a {
+            display: flex;
+            text-decoration: none;
+            color: black;
+            font-size: 20px;
+        }
+        .navbar .spotify img {
+            padding-right: 10px;
+        }
+        .navbar .search div {
+            float: left;
+        }
+        .home {
+            width: fit-content;
+            background-color: #96eeb5;
+            padding: 5px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .search-box {
+            width: fit-content;
+            background-color: #96eeb5;
+            padding: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 10rem;
+            display: flex;
+        }
+        .search-box input {
+            background-color: #96eeb5;
+            border: none;
+            padding-right: 50px;
+        }
+        .navbar ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+        .navbar li a {
+            text-decoration: none;
+            color: black;
+            margin-left: 10px;
+            margin-right: 10px;
+            display: flex;
+        }
+        .navbar li a:hover {
+            text-decoration: underline;
+        }
+
+    .hero {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      padding: 3rem 2rem;
+    }
+
+    .hero-text {
+      max-width: 50%;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      background-color: #1db954;
+      padding: 0.7rem 1.5rem;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 30px;
+      font-weight: bold;
+    }
+
+    .btn:hover {
+      background-color: #17a44b;
+    }
+
+    section {
+      padding: 2rem;
+    }
+
+    section h2 {
+      margin-bottom: 1rem;
+      color: #1db954;
+    }
+
+    .horizontal-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 1rem;
+      padding-bottom: 1rem;
+      scroll-snap-type: x mandatory;
+      scrollbar-width: none;
+    }
+
+    .horizontal-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .horizontal-scroll .song-card {
+      flex: 0 0 auto;
+      width: 150px;
+      scroll-snap-align: start;
+    }
+
+    .song-card {
+      background-color: #282828;
+      padding: 10px;
+      border-radius: 10px;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .song-card:hover {
+      transform: scale(1.05);
+    }
+
+    .song-card img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+    .Artist img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius:50%
+    }
+
+    .song-title {
+      width: 150px;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+
+    .song-artist {
+      width:150px;
+      font-size: 0.9rem;
+      color: #bbb;
+    }
+
+    footer {
+      background-color: #1db954;
+      color: #000;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <table class="navbar">
+        <tr>
+            <td class="spotify"><a href="index.html"><img src="https://img.icons8.com/?size=100&id=11116&format=png&color=000000" alt="spotify" width="25px">Spotify</a></td>
+            <td class="search">
+                <div class="home"><a href="index.html"><img src="https://img.icons8.com/?size=100&id=1iF9PyJ2Thzo&format=png&color=000000" alt="home" width="25px"></a></div>
+                <div class="search-box">
+                    <img src="https://img.icons8.com/?size=100&id=59878&format=png&color=000000" alt="search" width="25px">
+                    <input type="text" placeholder="What do you want to play?">
+                    <img src="https://img.icons8.com/?size=100&id=Wl2SDKOu9l8M&format=png&color=000000" alt="box" width="25px">
+                </div>
+            </td>
+            <td class="buttons">
+                <ul>
+                    <li><a href="#trending">Trending</a></li>
+                    <li><a href="#popular-artists">Artists</a></li>
+                    <li><a href="#popular-songs">Albums & Singles</a></li>
+                    <li><a href="#popular-radio">Radio</a></li>
+                    <li><a href="#featured-charts">Charts</a></li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</nav>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Welcome to Spotify</h1>
+      <p>Discover the latest hits and timeless classics.</p>
+      <a href="#" class="btn">Go Premium</a>
+    </div>
+  </section>
+  <section>
+    <h2>Premium</h2>
+    <div class="horizontal-scroll">
+      <div class="song-card">
+        <img src="https://spotipremium.com.co/wp-content/uploads/2024/10/spotify-cost.jpg">
+        <div class="song-title">No Ads with Premium</div>
+        <div class="song-artist">Enjoy uninterrupted music</div>
+      </div>
+    </div>
+  </section>
+  <section>
+    <h2>Trending songs</h2>
+    <div class="horizontal-scroll">
+      <div class="song-card"><img src="https://i.scdn.co/image/ab67616d00001e02982320da137d0de34410df61"><div class="song-title">Timeless</div><div class="song-artist">The Weeknd,playboi carti</div></div>
+      <div class="song-card"><img src="https://i.scdn.co/image/ab67616d00001e02d9985092cd88bffd97653b58"><div class="song-title">Luther</div><div class="song-artist">Kendrick lamar,SZA</div></div>
+      <div class="song-card"><img src="https://i.scdn.co/image/ab67616d00001e0236032cb4acd9df050bc2e197"><div class="song-title">APT.</div><div class="song-artist">ROSE,bruno mars</div></div>
+      <div class="song-card"><img src="https://i.scdn.co/image/ab67616d00001e021ea0c62b2339cbf493a999ad"><div class="song-title">Not like us</div><div class="song-artist">Kendrick lumar</div></div>
+      <div class="song-card"><img src="https://i.scdn.co/image/ab67616d00001e024246e3158421f5abb75abc4f"><div class="song-title">All i want for chrismast is you</div><div class="song-artist">Mariah carey</div></div>
+    </div>
+  </section>
+  <section>
+    <h2>Best of Artists</h2>
+    <div class="horizontal-scroll">
+      <div class="Artist"><img src="https://i.scdn.co/image/ab67616100005174b3020e473288b9da901515cf"><div class="song-title">This is aboy ningthouja</div><div class="song-artist">Aboy Ningthouja</div></div>
+      <div class="Artist"><img src="https://i.scdn.co/image/ab67616100005174a212c1c4ee43f77d4295aa22"><div class="song-title">This is Chingkhei changammayum</div><div class="song-artist">Chingkhei changammayum</div></div>
+      <div class="Artist"><img src="https://i.scdn.co/image/ab676161000051741fbaed746e9524e17c6a397c"><div class="song-title">This is scarxiom</div><div class="song-artist">Scarxiom</div></div>
+      <div class="Artist"><img src="https://i.scdn.co/image/ab67616100005174926e50c5366e1d3231cf1c5f"><div class="song-title">This is Meewakching</div><div class="song-artist">Meeeakching</div></div>
+      <div class="Artist"><img src="https://i.scdn.co/image/ab67616100005174d642648235ebf3460d2d1f6a"><div class="song-title">This is BTS</div><div class="song-artist">BTS</div></div>
+    </div>
+  </section>
+  <section>
+    <h2>Popular Radio</h2>
+    <div class="horizontal-scroll">
+      <div class="song-card"><img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/0du5cEVh5yTK9QJze8zA0C/en"><div class="song-title"> The Bruno Mars Radio</div><div class="song-artist"></div>with marron 5,Katy Perry,Ed Sheeran and more</div>
+      <div class="song-card"><img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/1Xyo4u8uXC1ZmMpatF05PJ/en"><div class="song-title">The weekend Radio</div><div class="song-artist">With Doja Cat, Tory Lanez, The Neighbourhood and more</div></div>
+      <div class="song-card"><img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/6eUKZXaKkcviH0Ku9w2n3V/en"><div class="song-title">Ed Sheeran Radio</div><div class="song-artist">With Maroon 5, Lewis Capaldi, One Direction and more</div></div>
+      <div class="song-card"><img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/3Nrfpe0tUJi4K4DXYWgMUX/en"><div class="song-title">BTS Radio</div><div class="song-artist"> with Kim Namjoon, Kim Seok Jin,Min Yoongi, Junghoseok, Park Jimin ,Kim Tae and Jk</div></div>
+      <div class="song-card"><img src="https://pickasso.spotifycdn.com/image/ab67c0de0000deef/dt/v1/img/radio/artist/41MozSoPIsD1dJM0CLPjZF/en"><div class="song-title">BLACKPINK Radio</div><div class="song-artist">With LISA, JISOO, JENNIE and ROSE</div></div>
+    </div>
+  </section>
+  <section>
+    <h2>Popular Songs & Singers</h2>
+    <div class="horizontal-scroll">
+      <div class="song-card"><img src="https://i.scdn.co/image/ab67616d00001e026404721c1943d5069f0805f3"><div class="song-title">Aashiqui 2</div><div class="song-artist">Mithoon,Ankit Tiwari,jeet</div></div>
+      <div class="song-card"><img src="https://i.scdn.co/image/ab67616d00001e024f1228c4c015d349d1eacb5c"><div class="song-title">Ultimate love song</div><div class="song-artist">Arjit Singh</div></div>
+      <div class="song-card"><img src="https://i.scdn.co/image/ab67616d00001e02aad3f4b601ae8763b3fc4e88"><div class="song-title">Glory</div><div class="song-artist">Yo Yo honey singh</div></div>
+      <div class="song-card"><img src="https://i.scdn.co/image/ab67616d00001e02e2e352d89826aef6dbd5ff8f"><div class="song-title">Sunflower - Spider-Man: Into the Spider-Verse</div><div class="song-artist">Post Malone, Swae Lee</div></div>
+      <div class="song-card"><img src="https://i.scdn.co/image/ab67616d00001e023f476b962eb78cb7e480a299"><div class="song-title">잘자요 아가씨 (Prod. 과나)</div><div class="song-artist">ASMRZ</div></div>
+    </div>
+  </section>
+  <section>
+    <h2>Featured Chart</h2>
+    <div class="horizontal-scroll">
+      <div class="song-card"><img src="https://charts-images.scdn.co/assets/locale_en/regional/weekly/region_global_default.jpg"><div class="song-title">Top songs-Global</div><div class="song-artist">Your weekly update of the most played tracks right now - Global</div></div>
+      <div class="song-card"><img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_global_default.jpg"><div class="song-title">Top 50 Global</div><div class="song-artist">Your daily update of the most played tracks right now - Global.</div></div>
+      <div class="song-card"><img src="https://charts-images.scdn.co/assets/locale_en/viral/daily/region_global_default.jpg"><div class="song-title">Viral 50 - Global</div><div class="song-artist">Your daily update of the most viral tracks right now - Global.</div></div>
+      <div class="song-card"><img src="https://charts-images.scdn.co/assets/locale_en/regional/daily/region_nl_default.jpg"><div class="song-title">TOP 50- NETHERLANDS</div><div class="song-artist">Your daily update of the most played tracks right now - Netherlands..</div></div>
+      <div class="song-card"><img src="https://charts-images.scdn.co/assets/locale_en/viral/daily/region_nl_default.jpg"><div class="song-title">VIRAL 50- NETHERLANDS</div><div class="song-artist">Your daily update of the most viral tracks right now - NETHERLANDS.</div></div>
+    </div>
+  </section>
+  <footer>
+    <p>Created [Leivon Alvina BC2069] | NIELIT Akampat | Web Developer</p>
+  </footer>
+  <footer style="background-color: #1db954; color: #000; text-align: center; padding: 1rem;">
+    &copy; 2025 Leivon Alvina. All rights reserved.
+  </footer>
+
+</body>
+</html>
